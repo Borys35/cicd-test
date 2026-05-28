@@ -32,3 +32,15 @@ def test_multiply(a, b, expected):
 def test_divide(a, b, expected):
     result = utils.divide(a, b)
     assert result == expected
+
+
+@pytest.mark.parametrize("a, expected ", [(2, "10"), (5, "101")])
+def test_conversion(a, expected):
+    result = utils.convert_to_bin(a)
+    assert result == expected
+
+@pytest.mark.parametrize("a, expected ", [(101, "wrong"), (5.4, "wrong")])
+def test_conversion_error(a, expected):
+    with pytest.raises(ValueError) as e:
+        utils.convert_to_bin(a)
+    assert e.value == "Invalid input"
