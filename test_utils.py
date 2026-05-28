@@ -39,6 +39,7 @@ def test_conversion(a, expected):
     result = utils.convert_to_bin(a)
     assert result == expected
 
+
 @pytest.mark.parametrize("a ", [(101), (5.4), (-1)])
 def test_conversion_error(a):
     with pytest.raises(ValueError) as e:

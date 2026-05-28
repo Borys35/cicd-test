@@ -25,5 +25,5 @@ def convert_to_bin(n: int) -> str:
     """Converts int to binary string."""
     if n <= 0 or n > 100 or not isinstance(n, int):
         raise ValueError("Invalid input")
-    
+
     return bin(n)[2:]
